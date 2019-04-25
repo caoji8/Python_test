@@ -3,7 +3,7 @@ def saveDate(date,filename = "user.json"):
     with open(filename, 'r', encoding='utf-8') as opp:
         model = json.load(opp)
     with open(filename, mode='w', encoding='utf-8') as sa:
-        #将读出来的枚举作为一个列表append注册函数提供的值
+        #将读出来的枚举作为一个列表append(注册函数提供的值)
         model.append(date)
         json.dump(model,sa)
 def readDate(filename = "user.json"):

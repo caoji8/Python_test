@@ -12,6 +12,7 @@ def login(name,password):
             logon_system()
             #注册函数
         else:
+            #no 处理
             pass
     else:
         flag = False
@@ -22,4 +23,5 @@ def logon_system():
     new_logon = input("请输入用户名,密码").split(",")
     new_user = {}
     new_user[new_logon[0]]=new_logon[1]
+    #将值处理成对象存入
     saveDate(new_user)
