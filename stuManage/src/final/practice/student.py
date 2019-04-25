@@ -30,6 +30,8 @@ class Student(object):
         stu_obj["speciality"] = self.speciality
         stu_obj["grade"] = self.grade
         stu_obj["score"] = self.score
+
+        #第一处修改
         self.list_students.append(stu_obj)
         print("添加成功")
 
@@ -41,12 +43,14 @@ class Student(object):
         delete_input = input("请输入要删除学号")
         delete_input = int(delete_input)
         index = 0
+        #第二处
         for i in self.list_students:
 
             for key, value in i.items():
                 # print(key,value)
                 if key == "number":
                     if value == delete_input:
+                        #第三处
                         self.list_students.pop(index)
                     else:
                         pass
@@ -60,6 +64,7 @@ class Student(object):
                                 输出：true/false                      
         '''
         modify_input = input("请输入您的姓名，修改的类别和内容").split(",")
+        #第四处
         for i in self.list_students:
             for key, value in i.items():
                 # 判断是否在全局变量中
@@ -68,19 +73,20 @@ class Student(object):
                     i[modify_input[1]] = modify_input[2]
                     print("修改成功")
 
-
     def select(self):
         '''学生信息查找方法
                                  输入：学号、专业、年级
                                 输出：学生信息                      
         '''
         user = input("请输入学号或者姓名").split()
+        #第五处
         for i in self.list_students:
             if user[0] in i.values():
                 print(i)
     #关键字查找 查找专业年纪
     def keyword_search(self,choose):
         user = input("请输入姓名").split()
+        #第六处
         for i in self.list_students:
             if user[0] in i.values():
                 print(i[choose])
@@ -93,6 +99,7 @@ class Student(object):
         '''
         list = []
         user = input("请输入姓名").split()
+        #第七处
         for i in self.list_students:
             for key, value in i.items():
                 if key == "score":
