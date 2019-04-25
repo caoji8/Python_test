@@ -1,5 +1,5 @@
 #coding:utf-8
-from src.final.practice.student import Student
+from stuManage.src.final.practice.student import Student
 class MsgPrint(object):
     '''
     classdocs

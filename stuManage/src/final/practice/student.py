@@ -32,8 +32,6 @@ class Student(object):
         stu_obj["score"] = self.score
         self.list_students.append(stu_obj)
         print("添加成功")
-        printtest = MsgPrint()
-        printtest.mainMenu()
 
     def delete_input(self):
         '''学生信息删除方法
