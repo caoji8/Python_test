@@ -1,4 +1,5 @@
 #coding:utf-8
+from stuManage.src.final.practice.Choose import choose_model
 from stuManage.src.final.practice.student import Student
 class MsgPrint(object):
     '''
@@ -18,8 +19,7 @@ class MsgPrint(object):
               2、学生查找\n\
               3、成绩管理\n\
             请输入编号进入相应菜单")
-        choose = input(">")
-        choose = int(choose)
+        choose = choose_model(3)
         if choose == 1:
             #管理模块
             self.ManagementChoose()
@@ -30,16 +30,13 @@ class MsgPrint(object):
         elif choose == 3:
             #成绩模块
             self.Score_management()
-        else:
-            print("Error choose")
 
     def Score_management(self):
-        print("*************欢迎使用学生管理系统*************\n\
+        print("*************欢迎使用学生成绩系统*************\n\
                       1、成绩修改\n\
                       2.专业排名\n\
                     请输入编号进入相应菜单")
-        Score_choose = input(">")
-        Score_choose = int(Score_choose)
+        Score_choose = choose_model(2)
         if Score_choose == 1:
             # 成绩修改
             stu_score = Student()
@@ -48,18 +45,15 @@ class MsgPrint(object):
             # 专业排名
             stu_score = Student()
             stu_score.alertScore()
-        else:
-            print("Error")
 
     #查找模块
     def StudentSeek(self):
-        print("*************欢迎使用学生管理系统*************\n\
+        print("*************欢迎使用学生查找系统*************\n\
                       1、学号查找\n\
                       2、专业查找\n\
                       3、年级查找\n\
                     请输入编号进入相应菜单")
-        choose = input(">")
-        choose = int(choose)
+        choose = choose_model(3)
         if choose == 1:
             #学号查找
             stu_seek = Student()
@@ -73,16 +67,13 @@ class MsgPrint(object):
             #年级查找
             grade_seek =Student()
             grade_seek.keyword_search("grade")
-        else:
-            print("Error choose")
     def ManagementChoose(self):
-        print("*************欢迎使用学生管理系统*************\n\
+        print("*************欢迎使用学生信息管理系统*************\n\
               1、添加\n\
               2、删除\n\
               3、修改\n\
             请输入编号进入相应菜单")
-        Management_choose = input(">")
-        Management_choose = int(Management_choose)
+        Management_choose = choose_model(3)
         if Management_choose == 1:
             #添加
             self.studentManageMenu()
@@ -94,12 +85,9 @@ class MsgPrint(object):
             #修改
             stu_modify = Student()
             stu_modify.alert()
-        else:
-            print("Error")
-
 
     def studentManageMenu(self):
-        print("*************欢迎使用学生管理功能模块*************\n\
+        print("*************欢迎使用学生添加功能模块*************\n\
     请输入学生信息：姓名，学号，专业，年级，成绩")
         studentManage_inpnt = input(">").split(",")
         if len(studentManage_inpnt)==5:
@@ -111,8 +99,6 @@ class MsgPrint(object):
                 print("添加成功")
             else:
                 print("添加错误")
-        else:
-            print("Error input")
 
             #打印查找功能
     def studentManageInfo(self):
@@ -139,5 +125,4 @@ class MsgPrint(object):
 
                 
             
-        
         

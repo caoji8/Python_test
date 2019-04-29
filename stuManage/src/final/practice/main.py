@@ -1,7 +1,7 @@
 #coding:utf-8
 from stuManage.src.final.practice.msgPrint import MsgPrint
+from stuManage.src.final.practice.Choose import choose_model
 from stuManage.src.final.practice.login import login,logon_system
-from stuManage.src.final.practice.student import Student
 if __name__=="__main__":
     #     测试
     # printtest.studentManageMenu() 用户输入信息系统
@@ -10,11 +10,7 @@ if __name__=="__main__":
                       1、登录\n\
                       2、注册\n\
                     请输入编号进入相应菜单")
-        choose_main = input(">")
-        try:
-            choose_main = int(choose_main)
-        except:
-            print("Error input")
+        choose_main = choose_model(2)
         if choose_main == 1:
             student_input = input("请输入用户名,密码").split(",")
             try:
@@ -30,10 +26,6 @@ if __name__=="__main__":
             #这里要写一个注册方法 调用saveDate
             logon_system()
 
-        else:
-            print("Error choose")
-
-
 
 #实例化
 # printtest = MsgPrint(key=[{"name":"张三","no":1234567890,"major":"物联网","grade":"一年级","score":90},{"name":"张三","no":1234567890,"major":"物联网","grade":"一年级","score":90}])
@@ -42,4 +34,3 @@ if __name__=="__main__":
 # 登陆
 # 成功登陆主菜单
 # 选择编号进入相应子菜单
-    
