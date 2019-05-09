@@ -1,10 +1,16 @@
 #coding:utf-8
 from stuManage.src.final.practice.Choose import choose_model
 from stuManage.src.final.practice.student import Student
+from stuManage.src.final.practice.StudentMassage import *
 class MsgPrint(object):
     '''
     classdocs
     '''
+    dbname = "StudentMassage.db"
+    # 连接数据库
+    con = connect(dbname)
+    # 获取游标
+    cur = con.cursor()
 
     def __init__(self):
         '''
@@ -90,7 +96,9 @@ class MsgPrint(object):
         print("*************欢迎使用学生添加功能模块*************\n\
     请输入学生信息：姓名，学号，专业，年级，成绩")
         studentManage_inpnt = input(">").split(",")
+
         if len(studentManage_inpnt)==5:
+
             #存储
             student = Student(studentManage_inpnt[0],studentManage_inpnt[1],studentManage_inpnt[2],studentManage_inpnt[3],studentManage_inpnt[4])
             estimate = student.add()
@@ -99,6 +107,8 @@ class MsgPrint(object):
                 print("添加成功")
             else:
                 print("添加错误")
+        else:
+            print('输入有误')
 
             #打印查找功能
     def studentManageInfo(self):
@@ -121,8 +131,4 @@ class MsgPrint(object):
                 print(stu_info)
         else:
             print("the input must be dict!")
-        
 
-                
-            
-        
