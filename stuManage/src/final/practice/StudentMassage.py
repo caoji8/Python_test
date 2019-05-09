@@ -34,25 +34,21 @@ def updateDb(choose,new_massage,number):
     if choose==1:
         cur.execute('update StudentMassage set name =? where (name =? or number = ?)',(new_massage,number,number))
         con.commit()
-        con.close()
     elif choose ==2:
-        cur.execute('update StudentMassage set name =? where (number =? or number = ?)', (new_massage, number, number))
+        cur.execute('update StudentMassage set number =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
-        con.close()
     elif choose==3:
-        cur.execute('update StudentMassage set name =? where (major =? or number = ?)', (new_massage, number, number))
+        cur.execute('update StudentMassage set major =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
-        con.close()
     elif choose==4:
-        cur.execute('update StudentMassage set name =? where (grade =? or number = ?)', (new_massage, number, number))
+        cur.execute('update StudentMassage set grade =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
-        con.close()
     else:
         print("Error Choose")
 # updateDb("score",100,"小明")
 # insertDb("小明",114,"云计算","一年级",95)
 # insertDb(114,"小红","物联网","二年级",98)
-# updateDb(4,"二年级","小明")
+updateDb(4,"二年级","小明")
 rua = cur.execute('select score from StudentMassage where name = ?',("小明",))
 for i in rua:
     print(i[0])
