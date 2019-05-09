@@ -28,16 +28,32 @@ def selectDb(number):
         print("未搜索到该内容")
     finally:
         con.close()
-def updateDb(massage,new_massage,number):
+def updateDb(choose,new_massage,number):
     # 修改学生信息
-    # 不正确
-    cur.execute('update StudentMassage set ?=? where (name =? or number = ?)',(massage,new_massage,number,number))
-    con.commit()
-    con.close()
+    # 增加一个用户选择 来更改对应的内容
+    if choose==1:
+        cur.execute('update StudentMassage set name =? where (name =? or number = ?)',(new_massage,number,number))
+        con.commit()
+        con.close()
+    elif choose ==2:
+        cur.execute('update StudentMassage set name =? where (number =? or number = ?)', (new_massage, number, number))
+        con.commit()
+        con.close()
+    elif choose==3:
+        cur.execute('update StudentMassage set name =? where (major =? or number = ?)', (new_massage, number, number))
+        con.commit()
+        con.close()
+    elif choose==4:
+        cur.execute('update StudentMassage set name =? where (grade =? or number = ?)', (new_massage, number, number))
+        con.commit()
+        con.close()
+    else:
+        print("Error Choose")
 # updateDb("score",100,"小明")
 # insertDb("小明",114,"云计算","一年级",95)
 # insertDb(114,"小红","物联网","二年级",98)
-rua = cur.execute('select score from StudentMassage where name = {}'.format("小明"))
+# updateDb(4,"二年级","小明")
+rua = cur.execute('select score from StudentMassage where name = ?',("小明",))
 for i in rua:
     print(i[0])
 selectDb("小明")
