@@ -31,25 +31,30 @@ def selectDb(number):
 def updateDb(choose,new_massage,number):
     # 修改学生信息
     # 增加一个用户选择 来更改对应的内容
+    # 修改名字
     if choose==1:
         cur.execute('update StudentMassage set name =? where (name =? or number = ?)',(new_massage,number,number))
         con.commit()
+    # 修改学号
     elif choose ==2:
         cur.execute('update StudentMassage set number =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
+    # 修改学科
     elif choose==3:
         cur.execute('update StudentMassage set major =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
+    # 修改年级
     elif choose==4:
         cur.execute('update StudentMassage set grade =? where (name =? or number = ?)', (new_massage, number, number))
         con.commit()
+    # 错误处理
     else:
         print("Error Choose")
 # updateDb("score",100,"小明")
 # insertDb("小明",114,"云计算","一年级",95)
 # insertDb(114,"小红","物联网","二年级",98)
-updateDb(4,"二年级","小明")
-rua = cur.execute('select score from StudentMassage where name = ?',("小明",))
-for i in rua:
-    print(i[0])
-selectDb("小明")
+# rua = cur.execute('select score from StudentMassage where name = ?',("小明",))
+# print(type(rua))
+# for i in rua:
+#     print(i[0])
+# selectDb("小明")
