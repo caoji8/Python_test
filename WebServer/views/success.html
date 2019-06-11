@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ch">
+	<head>
+		<meta charset="UTF-8">
+		<title>注册成功</title>
+	<style>
+		body {
+			margin:0;
+			background:rgba(233,233,233,1);
+		}
+		.navbar {
+			overflow:hidden;
+		}
+		/*标题*/
+		.navbar p {
+			float:left;
+			font-size:40px;
+			font-family:STHeiti;
+			font-weight:300px;
+			line-height:0px;
+			margin-top:40px;
+			margin-left:41px;
+			color:rgba(14,13,13,1);
+			opacity:1;
+		}
+		/*界面框*/
+		.Interface{
+			width:584px;
+		    height:297px;
+		    margin:80px auto;
+		    background:rgba(255,255,255,1);
+		    border:1px solid rgba(255,255,255,1);
+		    box-shadow:0px 3px 6px rgba(143,141,141,0.16);
+		    opacity:1;
+		}
+		/*登陆字体*/
+		.Interface p{
+			width:max-content;
+			height:0px;
+			margin:65px auto;
+			font-size:24px;
+			font-family:NSimSun;
+			line-height:47px;
+			color:rgba(3,3,3,1);
+			letter-spacing: 8px;
+			opacity:1;
+			
+		}
+		/*提交按钮*/
+		.inputy {
+			width:431px;
+		    height:40px;
+		    color: white;
+		    margin:44px 66px;
+            background-color:rgba(90,88,88,1);
+            border:1px solid rgba(230,227,227,1);
+		    opacity:1;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="navbar">
+		<p>DESIE LAB</p>
+	</div>
+		<div class="Interface">
+				<p>注册成功</p>
+				<input type="submit" value="立刻登陆" class="inputy" id="btn">
+		</div>
+	</body>
+<script>
+	var btn = document.getElementById('btn');
+	btn.onclick =function () {
+		window.location.href="/login";
+	}
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>人员管理</title>
+    <style>
+            *{
+        margin: 0;
+        padding: 0;
+    }
+    .rule{
+        height: 2px;
+        width: 100%;
+        background-color: black;
+    }
+    .main{
+        margin: 0 auto;
+        height: 700px;
+        width: 1250px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+   .flex_row{
+    display: flex;
+    flex-direction: row;
+    }
+    .flex_grow{
+        flex-grow: 1;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">人员管理</h1>
+        <div class="rule"></div>
+    <div class="main">
+        <div class="flex_grow flex_row">
+        <li class="flex_grow">姓名</li>
+        <li class="flex_grow">年龄</li>
+        <li class="flex_grow">性别</li>
+        <li class="flex_grow">工作</li>
+        <li class="flex_grow">手机电话</li>
+        </div>
+        {% for i in date%}
+        <div class="flex_grow flex_row">
+            <li class="flex_grow">{{i[0]}}</li>
+            <li class="flex_grow">{{i[2]}}</li>
+            <li class="flex_grow">{{i[3]}}</li>
+            <li class="flex_grow">{{i[4]}}</li>
+            <li class="flex_grow">{{i[5]}}</li>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

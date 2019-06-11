@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<style>
+		body {
+			margin:0;
+			background:rgba(233,233,233,1);
+		}
+		.navbar {
+			overflow:hidden;
+		}
+		.navbar p {
+			float:left;
+			font-size:40px;
+			font-family:STHeiti;
+			font-weight:300;
+			line-height:0px;
+			margin-top:40px;
+			margin-left:41px;
+			color:rgba(14,13,13,1);
+			opacity:1;
+		}
+		.right {
+			float:right;
+			text-decoration:none;
+			display:inline-block;
+			font-size:20px;
+			font-family:NSimSun;
+			font-weight:300;
+			line-height:31px;
+			margin-top:25px;
+			margin-right:30px;
+			color:rgba(3,3,3,1);
+			opacity:1;
+		}
+		.box {
+			width:500px;
+		    height:400px;
+		    margin:80px auto;
+		    background:rgba(255,255,255,1);
+		    border:1px solid rgba(255,255,255,1);
+		    box-shadow:0px 3px 6px rgba(143,141,141,0.16);
+		    opacity:1;
+		}
+		.box p {
+		    width:130px;
+		    height:35px;
+		    margin:25px auto;
+		    font-size:30px;
+		    font-family:NSimSun;
+		    font-weight:400;
+		    line-height:35px;
+		    color:rgba(3,3,3,1);
+		    opacity:1;
+		}
+		form{
+			width:500px;
+			height:130px;
+		}
+		.box .inputw {
+			width:350px;
+		    height:40px;
+		    margin:5px 75px;
+		    background:rgba(248,248,248,1);
+		    border:1px solid rgba(230,227,227,1);
+		    opacity:1;
+		}
+		.box .inputx{
+			width:170px;
+		    height:40px;
+		    margin:5px 0px;
+		    margin-left:75px;
+		    background:rgba(248,248,248,1);
+		    border:1px solid rgba(230,227,227,1);
+		    opacity:1;
+		}
+		.box .inputz{
+			width:174px;
+		    height:42px;
+		    margin-left:2px;
+		    background:rgba(90,88,88,1);
+            border:1px solid rgba(230,227,227,1);
+		    opacity:1;
+		}
+		.box a{
+			text-decoration:none;
+			margin-left:180px;
+			font-size:14px;
+            font-family:STHeiti;
+            font-weight:300;
+            line-height:0px;
+            color:rgba(76,75,75,1);
+            opacity:1;
+		}
+		.box .inputy {
+			width:353px;
+		    height:40px;
+		    margin:90px 75px;
+            background:rgba(90,88,88,1);
+            border:1px solid rgba(230,227,227,1);
+		    opacity:1;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<p>DESIE LAB</p>
+	</div>
+	<div class="box">
+		<p>重置密码</p>
+		<div style="width:80px;height:12px;margin:0 auto;">
+		<font style="font-size:14px;font-family:STHeiti;font-weight:300;line-height:0px;color:rgba(76,75,75,1);opacity:1;text-align:center;">手机找回</font>
+		</div>
+		<hr style="height:1px;width:400px;border:none;border-top:1px solid #555555;" />
+		<div>
+			<form>
+				 <input type="text" name="firstname" placeholder=" 手机号" class="inputw"><br>
+				 <div>
+				 <input type="text" name="lastname" placeholder=" 验证码" class="inputx">
+				 <input type="submit" value="获取短信验证码" class="inputz">
+				 </div>
+				 <input type="text" name="lastname" placeholder=" 新密码" class="inputw"><br>
+				 <input type="text" name="lastname" placeholder=" 确认密码" class="inputw"><br>
+			</form>
+		</div>
+		<input type="submit" value="提交" class="inputy">
+	</div>
+
+</body>
+</html>
