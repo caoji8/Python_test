@@ -8,7 +8,6 @@ from jinja2 import Environment,FileSystemLoader
 import configparser
 from sqlite3 import connect
 import logging
-
 async def login(request):
     print(request.message.path)
     with open('./views/login.html', 'r', encoding='utf-8') as op:
@@ -26,9 +25,6 @@ async def selectAll(request):
     template = env.get_template('selectAll.html')
     veiw = template.render(**locals())
     return web.Response(body=veiw,content_type='text/html')
-    # with open('./views/selectAll.html', 'r', encoding='utf-8') as op:
-    #     data = op.read()
-    # return web.Response(body=data, content_type='text/html')
 # 处理判断并返回页面
 async def check(request):
     print(request)

@@ -99,8 +99,3 @@ class Datebase():
     def close(self):
         self.cur.close()
         self.con.close()
-# model = Datebase('test.db')
-# model.creatDatebase()
-# model.inserMassage(username='田所',password='big',age=24,gender='男',job='学生',telephone=114514)
-# liss = model.selectPassword('小明',"big")
-# print(liss)
