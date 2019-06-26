@@ -83,7 +83,7 @@ async def init(loop):
     print(cf.get('host','url'))
     host = cf.get('host','localhost')
     port = cf.get('host','port')
-    message = 'http://localhost:9002'
+    message = 'http://localhost:{}'.format(port)
     logging.basicConfig(filename='webserver',level = logging.DEBUG,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     logging.info(message)
     site = web.TCPSite(runner,host=host,port=port)
@@ -92,5 +92,3 @@ async def init(loop):
 loop = asyncio.get_event_loop()
 loop.run_until_complete(init(loop))
 loop.run_forever()
-
-
